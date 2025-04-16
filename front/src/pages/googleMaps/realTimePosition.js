@@ -4,8 +4,7 @@ import Navbar from "../../components/navbar";
 import MenuList from "../../components/menu";
 
 function RealTimeTracking() {
-  const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: "AIzaSyBKdS460pbtW4C0g5FvKZ7gDWQJNT7Oz0s",
+  const { isLoaded } = useJsApiLoader({googleMapsApiKey: process.env.REACT_APP_GOOGLE_API_KEY
   });
   const [userPosition, setUserPosition] = useState({ lat: null, lng: null });
 

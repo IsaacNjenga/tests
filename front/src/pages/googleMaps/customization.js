@@ -10,7 +10,7 @@ const mapStyles = [
 
 function CustomMap() {
   const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: "AIzaSyBKdS460pbtW4C0g5FvKZ7gDWQJNT7Oz0s",
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_API_KEY,
   });
 
   if (!isLoaded) return <div>Loading...</div>;

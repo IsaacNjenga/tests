@@ -22,7 +22,7 @@ const events = [
 
 function EventLocator() {
   const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: "AIzaSyBKdS460pbtW4C0g5FvKZ7gDWQJNT7Oz0s",
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_API_KEY,
   });
   const [selectedEvent, setSelectedEvent] = useState(null);
 
