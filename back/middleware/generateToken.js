@@ -29,9 +29,8 @@ dotenv.config({ path: "../config/.env" });
 
 const generateToken = async (req, res, next) => {
   try {
-    const secret =
-      "1wqxsEQokkKcYMFrPXERCfkOzG6D0LXI5xEAZthGCDDAGsWjeY78dHTgpRmQmir7";
-    const consumer = "UbntcNJWpVAyglqYKMxSlK6GAp3yHBIGn57c0xQiFxJDPB5F";
+    const secret = process.env.MPESA_CONSUMER_SECRET;
+    const consumer = process.env.MPESA_CONSUMER_key;
 
     const auth = new Buffer.from(`${consumer}:${secret}`).toString("base64");
 

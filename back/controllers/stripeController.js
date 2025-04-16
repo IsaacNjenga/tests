@@ -1,10 +1,11 @@
 import Stripe from "stripe";
+import dotenv from "dotenv";
 
-const stripePublishableKey =
-  "pk_test_51QUp1QRoGGQBGchc5pmWV10WUKOtbk7kGVVNoQJ3PUZ2ymHRaganbkULyWj5sa9yjkFUAeGpVulXEiNroBqn8FA000Z8lMjCbP";
+dotenv.config();
 
-const stripePrivateKey =
-  "sk_test_51QUp1QRoGGQBGchcLbx8G2mqheA634XlRis7wjyWIb49yq8XsHigSosyOZLCxY7q9aIhha7ZpYKOtW5uFf8oIhFx00pVpSNjmw";
+const stripePublishableKey = process.env.STRIPE_PUBLISHABLE_KEY;
+
+const stripePrivateKey = process.env.STRIPE_PRIVATE_KEY;
 
 const stripe = new Stripe(stripePrivateKey);
 

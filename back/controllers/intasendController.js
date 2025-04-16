@@ -1,7 +1,9 @@
 import IntaSend from "intasend-node";
+import dotenv from "dotenv";
 
-const apipublishablekey = "ISPubKey_test_f8621b63-7760-4606-ba57-c5a64dc28d64";
-const apisecretkey = "ISSecretKey_test_d97a89b2-d3fb-451a-94e8-058da7124939";
+dotenv.config();
+const apipublishablekey = process.env.INTASEND_PUBLISHABLE_KEY;
+const apisecretkey = process.env.INTASEND_API_SECRET_KEY;
 
 let intasend = new IntaSend(apipublishablekey, apisecretkey, true);
 

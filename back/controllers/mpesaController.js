@@ -1,12 +1,14 @@
 import moment from "moment";
 import axios from "axios";
+import dotenv from "dotenv";
+
+dotenv.config();
 const stkpush = async (req, res) => {
   const { phoneNumber, accountNumber, amount } = req.body;
 
   const timeStamp = moment().format("YYYYMMDDHHmmss");
   const shortCode = "174379";
-  const passKey =
-    "bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919";
+  const passKey = process.env.MPESA_PASS_KEY;
 
   const password = new Buffer.from(shortCode + passKey + timeStamp).toString(
     "base64"

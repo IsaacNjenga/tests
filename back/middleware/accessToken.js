@@ -1,9 +1,12 @@
 import axios from "axios";
-const ipnId = "594d3029-3379-4ae8-9166-dc63188ccaa7";
+import dotenv from "dotenv";
+
+dotenv.config();
+
 //const generateIPN = (req, res) => {};
 const accessToken = async (req, res, next) => {
-  const consumer_key = "qkio1BGGYAXTu2JOfm7XSXNruoZsrqEW";
-  const consumer_secret = "osGQ364R49cXKeOYSpaOnT++rHs=";
+  const consumer_key = process.env.PESAPAL_CONSUMER_KEY;
+  const consumer_secret = process.env.PESAPAL_CONSUMER_SECRET;
 
   try {
     const response = await axios.post(
